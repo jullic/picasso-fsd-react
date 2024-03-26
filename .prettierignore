@@ -1,0 +1,9 @@
+/.idea
+/build
+/node_modules
+.eslintrc.json
+/src/**/*.spec.ts
+/src/**/*.test.ts
+postcss.config.cjs
+webpack.*
+tailwind.config.cjs
