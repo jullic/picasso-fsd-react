@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { FixedSizeList } from 'react-window';
 import InfiniteLoader from 'react-window-infinite-loader';
 
@@ -10,11 +10,16 @@ export const PostList: FC = () => {
     const [page, setPage] = useState(1);
     const { data, isLoading, isFetching, isError } = useGetPostListQuery(page);
     let itemCount = (data?.length || 0) + 1;
+    const isFirstLoading = useRef(true);
     // хардкод так как нельзя получить данную информацию с бекенда
     itemCount = itemCount >= 100 ? 100 : itemCount;
 
     const loadMoreHandler = (startIndex: number, stopIndex: number) => {
         if (!isError && !isLoading && !isFetching) {
+            if (isFirstLoading.current && data && data.length > 10) {
+                setPage(Math.ceil(data.length / 10));
+                isFirstLoading.current = false;
+            }
             setPage((p) => p + 1);
         }
     };

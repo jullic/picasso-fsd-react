@@ -36,5 +36,5 @@ export const baseApi = createApi({
     baseQuery: axiosBaseQuery(),
     endpoints: () => ({}),
     keepUnusedDataFor: 60 * 10,
-    // tagTypes: [],
+    tagTypes: ['POST_LIST'],
 });

@@ -18,8 +18,11 @@ export const postsApi = baseApi.injectEndpoints({
             serializeQueryArgs: ({ endpointName }: { endpointName: string }) => {
                 return endpointName;
             },
+            providesTags: ['POST_LIST'],
         }),
-        getPostById: builder.query<IPost, number>({ query: (id) => ({ method: 'GET', url: `/posts/${id}` }) }),
+        getPostById: builder.query<IPost, number>({
+            query: (id) => ({ method: 'GET', url: `/posts/${id}` }),
+        }),
     }),
 });
 
