@@ -3,6 +3,7 @@ import { FixedSizeList } from 'react-window';
 import InfiniteLoader from 'react-window-infinite-loader';
 
 import { PostItem } from '@/entities/post';
+import { ViewPostButton } from '@/features/view-post';
 import { useGetPostListQuery } from '@/shared';
 
 export const PostList: FC = () => {
@@ -34,7 +35,14 @@ export const PostList: FC = () => {
                             ref={ref}
                             width={'100%'}
                         >
-                            {({ index, style }) => <PostItem loading={!isItemLoaded(index)} style={style} {...(data || [])[index]} />}
+                            {({ index, style }) => (
+                                <PostItem
+                                    ViewButton={ViewPostButton}
+                                    loading={!isItemLoaded(index)}
+                                    style={style}
+                                    {...(data || [])[index]}
+                                />
+                            )}
                         </FixedSizeList>
                     )}
                 </InfiniteLoader>
