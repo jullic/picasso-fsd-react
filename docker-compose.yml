@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+    client:
+        build: .
+        image: picasso-app
+        env_file:
+            - .env
+        container_name: picasso-app
+        ports:
+            - '80:80'
