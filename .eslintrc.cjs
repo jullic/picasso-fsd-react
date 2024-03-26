@@ -17,7 +17,7 @@ module.exports = {
     parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
     plugins: ['react-refresh', 'prettier', 'simple-import-sort', 'import'],
     rules: {
-        'react-refresh/only-export-components': 'warn',
+        'react-refresh/only-export-components': 'off',
         quotes: ['error', 'single'],
         'jsx-quotes': ['error', 'prefer-single'],
         'max-len': [1, 140],
