@@ -14,7 +14,7 @@ export const PostList: FC = () => {
     // хардкод так как нельзя получить данную информацию с бекенда
     itemCount = itemCount >= 100 ? 100 : itemCount;
 
-    const loadMoreHandler = (startIndex: number, stopIndex: number) => {
+    const loadMoreHandler = () => {
         if (!isError && !isLoading && !isFetching) {
             if (isFirstLoading.current && data && data.length > 10) {
                 setPage(Math.ceil(data.length / 10));
