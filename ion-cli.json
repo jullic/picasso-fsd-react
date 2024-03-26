@@ -1,0 +1,62 @@
+{
+	"modules": [
+		"react",
+		"templater"
+	],
+	"assets": [
+		".ion"
+	],
+	"react": {
+		"libraryStyleWrapperFn": "classNames",
+		"variableName": "styles",
+		"excludes": [
+			"node_modules"
+		]
+	},
+	"templater": {
+		"templatesPath": ".ion/templates",
+		"layoutsPath": ".ion/layouts",
+		"defaultOutputPath": "src",
+		"wordForReplace": "FILENAME",
+		"npmPackages": [
+			"clsx",
+			"axios",
+			"react-router-dom",
+			"@reduxjs/toolkit",
+			"react",
+			"react-dom",
+			"react-redux",
+			"react-router",
+			"react-router-dom"
+		],
+		"npmDevPackages": [
+			"typescript-plugin-css-modules",
+			"@types/node",
+			"@types/react",
+			"@types/react-dom",
+			"@typescript-eslint/eslint-plugin",
+			"@typescript-eslint/parser",
+			"@vitejs/plugin-react",
+			"eslint",
+			"eslint-config-prettier",
+			"eslint-import-resolver-typescript",
+			"eslint-plugin-import",
+			"eslint-plugin-prettier",
+			"eslint-plugin-react-hooks",
+			"eslint-plugin-react-refresh",
+			"husky",
+			"lint-staged",
+			"prettier",
+			"stylelint",
+			"stylelint-config-clean-order",
+			"stylelint-config-prettier",
+			"stylelint-config-standard",
+			"stylelint-config-standard-scss",
+			"stylelint-config-styled-components",
+			"stylelint-processor-styled-components",
+			"typescript",
+			"vite"
+		],
+		"packageManager": "npm"
+	}
+}
